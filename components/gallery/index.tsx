@@ -15,11 +15,7 @@ interface GallerProps{
 const Gallery:React.FC<GallerProps> = ({images}) => {
   return (
     <Tab.Group as='div' className='flex flex-col-reverse'>
-<<<<<<< HEAD
-        <div className="mx-auto object-contain mt-6 block w-full max-w-2xl sm:block lg:max-w-none">
-=======
-        <div className="mx-auto object-contain mt-6 hidden w-full max-w-2xl block max-w-none">
->>>>>>> 716997a3e50d608ca7a21c61dad2ea5bf1efdc68
+        <div className="mx-auto object-contain mt-6  w-full max-w-2xl sm:block lg:max-w-none">
             <Tab.List className='grid grid-cols-4 gap-6'>
                 {images.map((image)=>(
                     <GalleryTab key={image.id} image={image}/>
