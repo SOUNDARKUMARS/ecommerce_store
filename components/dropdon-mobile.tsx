@@ -12,7 +12,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/dropdown-menu";
 
@@ -41,28 +40,49 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
           <MenuIcon onClick={handleMenuToggle} />
         </DropdownMenuTrigger>
         {isOpen && ( 
-          <DropdownMenuContent className="w-56 bg-white">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuContent className="w-56 text-lg  bg-white">
+            <DropdownMenuLabel >Categories</DropdownMenuLabel>
+            <hr className='mt-3'  />
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem className='bg-white rounded-md '>
+              <header>
+</header>
+                
                 {
-                  <nav className="mx-6 flex flex-col items-center  space-y-4">
+                  <div>
+                      
+                      <div className="hamburger-icon" id="icon">
+                        <div className="icon-1" id="a"></div>
+                        <div className="icon-2" id="b"></div>
+                        <div className="icon-3" id="c"></div>
+                        <div className="clear"></div>
+                      </div>
+                  <nav id="nav" className="mx-6 flex flex-col items-center  space-y-4">
                     {routes.map((route) => (
-                      <Link
-                        href={route.href}
-                        key={route.href}
-                        className={cn(
-                          "text-sm font-medium transition-colors hover:text-black",
-                          route.active ? "text-black" : "text-neutral-500"
-                        )}
-                      >
-                        {route.label}
-                      </Link>
+                      <ul>
+                        <li>
+                          <Link
+                            href={route.href}
+                            key={route.href}
+                            className={cn(
+                              "text-sm font-medium transition-colors hover:text-black",
+                              route.active ? "text-black" : "text-neutral-500"
+                            )}
+                          >
+                            {route.label}
+                          </Link>
+                        </li>
+                      </ul>
                     ))}
+                      <div className='font-semibold bg-green-200 py-3 px-4 rounded-md hover:bg-green-100 transition-colors text-green-700'>
+                          <Link href={'/contact'}>Contact Me</Link>
+                      </div>
                   </nav>
+                  <div className="dark-blue" id="blue"></div>
+                  
+                  </div> 
                 }
-                <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

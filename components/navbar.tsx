@@ -16,16 +16,19 @@ const NavBar =async() => {
                
 
                 <Link href='/' className="ml-4 flex lg:ml-0 gap-x-2">
-                    <p className="font-bold text-xl">STORE</p>
+                    <p className="font-bold text-xl">Lexiico</p>
                 </Link>
 
                 <div className='2xl:block lg:block md:block sm:block hidden'>
                     <MainNav  data={categories}/>
+                   
                 </div>
-
+                    <div className="hidden font-semibold bg-green-100 py-1 px-2 rounded-md hover:bg-green-50 transition-colors text-green-500 lg:block sm:block xl:block md:block">
+                        <Link href={'/contact'}>Contact Me</Link>
+                    </div>
                 <NavbarActions/>
        
-                <div className='lg:hidden md:hidden sm:hidden visible ml-6'><ChooseCategory data={categories}/></div>
+                <div className='lg:hidden  md:hidden sm:hidden visible ml-6'><ChooseCategory data={categories}/></div>
             </div>
         </Container>      
     </div>
