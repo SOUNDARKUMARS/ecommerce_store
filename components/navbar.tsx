@@ -5,8 +5,10 @@ import getCategories from "@/actions/get-categories"
 import NavbarActions from "./navbar-actions"
 import ChooseCategory from "./dropdon-mobile"
 
+
 const NavBar =async() => {
     const categories=await getCategories()
+
   return (
     <div className='border-b' >
         

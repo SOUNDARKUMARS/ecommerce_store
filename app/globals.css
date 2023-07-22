@@ -10,7 +10,7 @@ html,body,:root{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 350px;
+  max-width: 450px;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -25,7 +25,7 @@ html,body,:root{
 .fflex {
   display: flex;
   width: 100%;
-  gap: 6px;
+  gap: 7px;
 }
 
 .fform label {
@@ -202,4 +202,7 @@ html,body,:root{
  .ffancy:hover .bbottom-key-2 {
   right: 0;
   width: 0;
+}
+.ffancy:active{
+  transform: scale3d(1.2, 1.2, 1.2);
 }
