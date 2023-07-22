@@ -60,8 +60,8 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                       </div>
                   <nav id="nav" className="mx-6 flex flex-col items-center  space-y-4">
                     {routes.map((route) => (
-                      <ul>
-                        <li>
+                      
+                       
                           <Link
                             href={route.href}
                             key={route.href}
@@ -72,11 +72,18 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                           >
                             {route.label}
                           </Link>
-                        </li>
-                      </ul>
+                        
                     ))}
-                      <div className='font-semibold bg-green-200 py-3 px-4 rounded-md hover:bg-green-100 transition-colors text-green-700'>
-                          <Link href={'/contact'}>Contact Me</Link>
+                   
+                      <div className='grid gap-2'>
+                        <hr className="w-full"/>
+                        <div className='font-semibold text-center bg-green-200 py-3 px-4 rounded-md hover:bg-green-100 transition-colors text-green-700'>
+                            <Link href={'/contact'}>Contact Me</Link>
+                        </div>
+                        <div className='font-semibold text-center bg-blue-200 w-full py-3 px-4 rounded-md hover:bg-blue-100 transition-colors text-blue-700'>
+                            <Link href={'/terms'}>Terms of Services</Link>
+                        </div>
+                        
                       </div>
                   </nav>
                   <div className="dark-blue" id="blue"></div>
