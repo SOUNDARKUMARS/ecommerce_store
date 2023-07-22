@@ -77,7 +77,7 @@ const Contact = () => {
         </div>
 
         <div>
-            {/* live chat */}
+            {/* to do : live chat app */}
         </div>
     </div>
   )
