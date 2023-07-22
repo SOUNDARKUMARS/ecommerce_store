@@ -61,7 +61,10 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                   <nav id="nav" className="mx-6 flex flex-col items-center  space-y-4">
                     {routes.map((route) => (
                       
+<<<<<<< HEAD
                        
+=======
+>>>>>>> b305459ba2b29026f1bc8aefa052602bf7549d70
                           <Link
                             href={route.href}
                             key={route.href}
@@ -72,7 +75,11 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                           >
                             {route.label}
                           </Link>
+<<<<<<< HEAD
                         
+=======
+            
+>>>>>>> b305459ba2b29026f1bc8aefa052602bf7549d70
                     ))}
                    
                       <div className='grid gap-2'>
