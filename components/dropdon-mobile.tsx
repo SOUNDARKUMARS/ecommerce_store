@@ -60,8 +60,7 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                       </div>
                   <nav id="nav" className="mx-6 flex flex-col items-center  space-y-4">
                     {routes.map((route) => (
-                      <ul>
-                        <li>
+                      
                           <Link
                             href={route.href}
                             key={route.href}
@@ -72,8 +71,7 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                           >
                             {route.label}
                           </Link>
-                        </li>
-                      </ul>
+            
                     ))}
                       <div className='font-semibold bg-green-200 py-3 px-4 rounded-md hover:bg-green-100 transition-colors text-green-700'>
                           <Link href={'/contact'}>Contact Me</Link>
