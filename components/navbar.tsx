@@ -26,7 +26,7 @@ const NavBar =async() => {
                    
                 </div>
                     <div className="hidden font-semibold bg-green-100 py-1 px-2 rounded-md hover:bg-green-50 transition-colors text-green-500 lg:block sm:block xl:block md:block">
-                        <Link href={'/contact'}>Contact Me</Link>
+                        <Link href={'/contact'}>Contact Us</Link>
                     </div>
                     <div className="hidden font-semibold bg-blue-100 py-1 px-2 ml-3 rounded-md hover:bg-blue-50 transition-colors text-blue-500 lg:block sm:block xl:block md:block">
                         <Link href={'/terms'}>Terms of service</Link>
