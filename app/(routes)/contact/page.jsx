@@ -30,7 +30,7 @@ const Contact = () => {
         <p className='lg:w-[750px] sm:w-[500px] w-[350px] m-3 text-center'>Hey there, Fashionista! I am happy, you want to get in touch. Whether you have a style question or just want to chat about the latest trends, I am here for you! Feel free to reach out through any of the snazzy methods</p>
         <br />
         <div className='text-center'>
-           <p className='text-2xl font-bold m-5'>Lexico Clozet</p>
+           <p className='text-2xl font-bold m-5'>Afflux Clozet</p>
            <p  className='text-md font-semibold m-5'>SoundarKumar S</p>
            <p  className='text-md font-semibold m-5'>+91 735 899 7258</p>
            <p className='text-sm m-5'>soundarkumarsaravanan@gmail.com</p>
