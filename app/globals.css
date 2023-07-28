@@ -206,3 +206,6 @@ html,body,:root{
 .ffancy:active{
   transform: scale3d(1.2, 1.2, 1.2);
 }
+.customername_input{
+  width: 400px;
+}
