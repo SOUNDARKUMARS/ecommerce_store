@@ -168,7 +168,7 @@ const Summary = () => {
             <div className="confirmation-modal">
               <div className="confirmation-modal-content">
                 <h2 className='font-semibold text-center text-xl'>Confirm Order</h2>
-                <p className="text-center text-gray-600 m-3">We will call you for confirmation and you can receive within an hour ! click  <span className='text-gray-800 my-2'> 'Confirm Order'  </span> to place your order. </p>
+                <p className="text-center text-gray-600 m-3">We will call you for confirmation and you can receive within an hour ! click  <span className='text-gray-800 my-2'> &apos;Confirm Order&apos;   </span> to place your order. </p>
                 <div className="confirmation-modal-buttons flex justify-center">
                   <button className="cancel-button flex-1 p-2 mr-2 bg-red-200 text-red-500 rounded-md hover:bg-red-300 hover:text-red-800 transition-colors" onClick={closeConfirmationModal}>
                     Cancel
