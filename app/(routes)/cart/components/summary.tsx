@@ -1,15 +1,17 @@
 import { useState, useRef } from "react";
-import { useSearchParams } from "next/navigation";
 import Currency from "@/components/ui/currency";
-import Button from "@/components/ui/button";
 import useCart from "@/hooks/use-cart";
-import { toast } from "react-hot-toast";
 import emailjs from "emailjs-com";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Summary = () => {
+
+
+  
   const form = useRef<HTMLFormElement>(null);
 
-  const srchPrms = useSearchParams();
   const items = useCart((state) => state.items);
   const removeAll = useCart((state) => state.removeAll);
 
@@ -17,26 +19,29 @@ const Summary = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [description, setdescription] = useState("");
+  const [isConfirmationOpen, setConfirmationOpen] = useState(false);
 
   const total = items.reduce((tot, item) => {
     return tot + Number(item.price);
   }, 0);
 
+  const toggleConfirmationModal = () => {
+    setConfirmationOpen((prevState) => !prevState);
+  };
+
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-   
     const cartItemsContent = items
       .map((item) => `${item.name} - ${item.price}`)
       .join("\n");
-
 
     const templateParams = {
       customerName,
       phoneNumber,
       address,
       cartItems: cartItemsContent,
-      description
+      description,
     };
 
     emailjs
@@ -49,11 +54,33 @@ const Summary = () => {
           console.log(error.text);
         }
       );
+
+    closeConfirmationModal(); // Close the confirmation modal after sending the email
     e.currentTarget.reset();
-    toast.success("Order Placed! Item on the way...");
-    removeAll()
+    // toast.success("Order Placed! Item on the way...");
+    removeAll();
   };
 
+  const closeConfirmationModal = () => {
+    setConfirmationOpen(false);
+  };
+
+  const isCartEmpty = items.length === 0;
+  const isFormInvalid = !customerName || !phoneNumber || !address;
+
+  const notify=()=>{
+    toast.success('Your order has been placed successfully.', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
+
+  }
   return (
     <div className="mt-16 bg-gray-100 rounded-lg px-4 py-6 sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8">
       <h2 className="text-lg font-medium text-gray-900">Order summary</h2>
@@ -102,30 +129,70 @@ const Summary = () => {
           </label>
 
           <label className="messages_span">
-            <textarea name="description" placeholder="You wanna say somthin' ? feel free..." value={description} onChange={(e) => setdescription(e.target.value)} className="iinput01"></textarea>
-            <span>Just say it!</span>
+            <textarea
+              name="description"
+              placeholder="Quanity or Description or Messages"
+              value={description}
+              onChange={(e) => setdescription(e.target.value)}
+              className="iinput01"
+            ></textarea>
+            <span>optional</span>
           </label>
-         
 
-          {/* Display cart items in the form */} 
+          {/* Display cart items in the form */}
           {items.map((item, index) => (
             <div key={index} className="fflex mt-2">
               <label>
-                <input type="text" name={`cartItems`} className="iinput w-full text-gray-400 bg-gray-50" readOnly value={`${item.name} - ${item.price}`} />
-                
+                <input
+                  type="submit"
+                  name={`cartItems`}
+                  className="iinput w-full text-gray-400 bg-gray-50"
+                  readOnly
+                  value={`${item.name} - ${item.price}`}
+                />
               </label>
             </div>
           ))}
 
-{/* TODO:  Before placing the order do a confirmation alert */}
-          <button className="ffancy">
+          {/* Open the confirmation modal when the user clicks Continue */}
+          <button className="ffancy rounded-md" type="button"  disabled={isCartEmpty || isFormInvalid} onClick={toggleConfirmationModal}>
             <span className="ttop-key"></span>
-            <input type="submit" value="Place order now" className="text-gray-700 text-xl font-semibold" />
+            <input type='button' value="Continue" className="  text-gray-700 hover:bg-[lightgreen] transition-colors text-xl font-semibold" />
             <span className="bbottom-key-1"></span>
             <span className="bbottom-key-2"></span>
           </button>
+
+          {/* Confirmation Modal */}
+          <br />
+          {isConfirmationOpen && (
+            <div className="confirmation-modal">
+              <div className="confirmation-modal-content">
+                <h2 className='font-semibold text-center text-xl'>Confirm Order</h2>
+                <p className="text-center text-gray-600 m-3">We will call you for confirmation and you can receive within an hour ! click  <span className='text-gray-800 my-2'> 'Confirm Order'  </span> to place your order. </p>
+                <div className="confirmation-modal-buttons flex justify-center">
+                  <button className="cancel-button flex-1 p-2 mr-2 bg-red-200 text-red-500 rounded-md hover:bg-red-300 hover:text-red-800 transition-colors" onClick={closeConfirmationModal}>
+                    Cancel
+                  </button>
+                  <button onClick={notify}  disabled={isCartEmpty || isFormInvalid} className="confirm-button flex-1 cancel-button p-2 bg-green-200 text-green-500 hover:bg-green-300 hover:text-green-800 transition-colors rounded-md" type='submit'>
+                    Confirm Order
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </form>
       </div>
+      <ToastContainer
+      position="top-center"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="colored"/>
     </div>
   );
 };

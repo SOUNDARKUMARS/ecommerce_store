@@ -27,16 +27,15 @@ const Info:React.FC<InfoProps> = ({data}) => {
         <hr className="my-4"/>
         <div className="flex flex-col gap-y-6">
             <div className="flex items-center gap-x-4">
-                <h3 className="font-semibold gap-x-4">Size:</h3>
+                <h3 className="font-semibold gap-x-4">Description:</h3>
                 <div>
                     {data.size.name}
                 </div>
             </div>
             <div className="flex items-center gap-x-4">
-                <h3 className="font-semibold gap-x-4">Color:</h3>
+                <h3 className="font-semibold gap-x-4">Shop name:</h3>
                 <div className="flex ">
                     {data.color.name}
-                    <div className="h-5 ml-3 w-5 rounded-full border-spacing-1" style={{backgroundColor:data.color.value}}/>
                 </div>
             </div>
         </div>

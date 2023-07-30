@@ -58,7 +58,7 @@ const ChooseCategory: React.FC<MainNavProps> = ({ data }) => {
                         <div className="icon-3" id="c"></div>
                         <div className="clear"></div>
                       </div>
-                  <nav id="nav" className="mx-6 flex flex-col items-center  space-y-4">
+                  <nav id="nav" className=" flex flex-col items-center  space-y-4">
                     {routes.map((route) => (
                       
                           <Link
