@@ -131,12 +131,12 @@ const Summary = () => {
           <label className="messages_span">
             <textarea
               name="description"
-              placeholder="Quanity or Description or Messages"
+              placeholder="Quantity and any messages if any."
               value={description}
               onChange={(e) => setdescription(e.target.value)}
               className="iinput01"
             ></textarea>
-            <span>optional</span>
+            
           </label>
 
           {/* Display cart items in the form */}
@@ -148,7 +148,7 @@ const Summary = () => {
                   name={`cartItems`}
                   className="iinput w-full text-gray-400 bg-gray-50"
                   readOnly
-                  value={`${item.name} - ${item.price}`}
+                  value={`${item.name} - ${item.price} from ${item.color.name}`}
                 />
               </label>
             </div>

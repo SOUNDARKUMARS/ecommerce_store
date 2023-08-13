@@ -1,17 +1,21 @@
 'use client'
 
 import Button from "@/components/ui/button"
-import { Color, Size } from "@/types"
+import { Color } from "@/types"
+import {  } from "@/types"
 import { useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
 import qs from "query-string"
 import { cn } from "@/lib/utils"
 
+
 interface FilteProps{
-  data:(Size | Color)[]
+  data:(Color)[]
   name:string
   valueKey:string
 }
+
+
 
 const Filter:React.FC<FilteProps> = ({data,name,valueKey}) => {
   const searchParams=useSearchParams()

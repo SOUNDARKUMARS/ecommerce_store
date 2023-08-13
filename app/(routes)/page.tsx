@@ -4,15 +4,13 @@ import Billboard from "@/components/billboard"
 import getProducts from "@/actions/get-products"
 import ProductList from "@/components/product-list"
 export const revalidate=0
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
 const HomePage = async() => {
   const products=await getProducts({isFeatures:true})
-  const billboard=await getbillboard('9a135e63-1fde-40b7-a4b0-b58c3b27bcb3')
+  const billboard=await getbillboard('e9a633d1-f3b7-45bb-9d11-5751b95b4474')
   return (
     <div>
-        <SkeletonTheme baseColor="#202020" highlightColor="#444">
       <Container>
         <div className="space-y-10 pb-10">
           <Billboard data={billboard}/>
@@ -23,7 +21,6 @@ const HomePage = async() => {
         </div>
         
       </Container>
-      </SkeletonTheme>
     </div>
   )
 }

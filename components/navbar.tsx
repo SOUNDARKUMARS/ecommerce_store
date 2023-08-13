@@ -4,7 +4,8 @@ import MainNav from "./main-nav"
 import getCategories from "@/actions/get-categories"
 import NavbarActions from "./navbar-actions"
 import ChooseCategory from "./dropdon-mobile"
-
+import Image from "next/image"
+import logo from '@/components/assets/logo.png'
 
 const NavBar =async() => {
     const categories=await getCategories()
@@ -18,7 +19,9 @@ const NavBar =async() => {
                
 
                 <Link href='/' className="ml-4 flex lg:ml-0 gap-x-2">
-                    <p className="font-bold text-xl">STORE</p>
+                    <p className="font-bold text-xl">  
+                    <Image src={logo} alt="Aromart" height={90} width={90}/>
+                    </p>
                 </Link>
 
                 <div className='2xl:block lg:block md:block sm:block hidden'>

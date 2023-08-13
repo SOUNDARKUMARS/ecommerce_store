@@ -58,6 +58,7 @@ const ProductCard:React.FC<ProductCard> = ({data}) => {
             <p className="text-sm text-gray-500 ">{data.category.name|| <Skeleton/>}</p>
             <div className="flex items-center justify-between">
                 <Currency value={data.price} />
+                
             </div>
         </div>
     </div>
