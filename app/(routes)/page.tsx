@@ -8,7 +8,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const HomePage = async() => {
   const products=await getProducts({isFeatures:true})
-  const billboard=await getbillboard('e9a633d1-f3b7-45bb-9d11-5751b95b4474')
+  const billboard=await getbillboard('f6f4582f-89bf-4516-b6cc-3d91e2234e3e')
   return (
     <div>
       <Container>
