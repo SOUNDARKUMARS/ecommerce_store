@@ -26,7 +26,8 @@ const Info:React.FC<InfoProps> = ({data}) => {
         </div>
         <hr className="my-4"/>
         <div className="flex flex-col gap-y-6">
-            
+        <h3  className="font-semibold gap-x-4 text-blue-500"> Available in all the quantities. Mention the quantity in the cart page.</h3>            
+
             <div className="flex items-center gap-x-4">
                 <h3 className="font-semibold gap-x-4">Shop name:</h3>
                 <div className="flex ">
