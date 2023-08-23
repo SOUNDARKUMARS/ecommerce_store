@@ -42,7 +42,7 @@ const ProductCard:React.FC<ProductCard> = ({data}) => {
     <div className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4 " onClick={handleClick}>
         <div className='aspect-square rounded-xl bg-gray-100 relative'>
             <Image alt="product image" src={data?.images?.[0]?.url} height={470} width={420} style={{ mixBlendMode: "multiply" }} className='aspect-square object-contain rounded-md'/>
-            <div className='opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5'>
+            <div className=' absolute w-full px-6 bottom-5'>
                 <div className="flex gap-x-6 justify-center ">
                     <IconButton onClick={onPreview}
                     icon={<Expand size={20} className='text-black'/>}
