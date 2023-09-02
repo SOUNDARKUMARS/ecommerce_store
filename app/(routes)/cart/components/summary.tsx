@@ -140,6 +140,7 @@ const Summary = () => {
           </label>
 
           {/* Display cart items in the form */}
+          <div className="hidden">
           {items.map((item, index) => (
             <div key={index} className="fflex mt-2">
               <label>
@@ -153,6 +154,7 @@ const Summary = () => {
               </label>
             </div>
           ))}
+            </div>
 
           {/* Open the confirmation modal when the user clicks Continue */}
           <button className="ffancy rounded-md" type="button"  disabled={isCartEmpty || isFormInvalid} onClick={toggleConfirmationModal}>
